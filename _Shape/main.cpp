@@ -12,9 +12,10 @@ using std::cin;
 using std::endl;
 
 
-void printLine(){
+void printLine() {
     std::cout << "------------------------------------" << "\n";
 }
+
 int main()
 {
 

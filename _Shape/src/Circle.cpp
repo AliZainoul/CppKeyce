@@ -29,7 +29,6 @@ double Circle::calculateArea() const {
 
 // Helpers
 void Circle::printInfos() const {
-    std::cout << "-----------------------------------------------" << '\n';
     std::cout << "The name of my Circle is: " << name << '\n';
     std::cout << "The radius of my Circle is: " << r << '\n';
     std::cout << "Area: " << calculateArea() << std::endl;
