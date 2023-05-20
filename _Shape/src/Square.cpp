@@ -1,27 +1,41 @@
 #include "../lib/Square.hpp"
 
-
 // Constructors
-Square::Square(string _name) {(this)->name = _name;}
-Square::Square(string _name, double _l){
-    (this)->name = _name;
-    (this)->l = _l;
+Square::Square(const std::string& _name) : Shape(_name) {}
+
+Square::Square(const std::string& _name, double _l) : Shape(_name), l(_l) {}
+
+// Getters
+const double& Square::getL() const {
+    return l;
+}
+
+const std::string& Square::getName() const {
+    return name;
+}
+
+// Setters
+void Square::setL(double _l) {
+    l = _l;
+}
+
+void Square::setName(const std::string& _name) {
+    name = _name;
 }
 
 // Methods
-// Getters
-const double& Square::getL() const  { return (this)->l;}
-const string& Square::getName() const  { return (this)->name;}
+double Square::calculateArea() const {
+    return l * l;
+}
 
-// Setters
-void Square::setL(double _l) {(this)->l = _l;}
-void Square::setName(string _name){(this)->name = _name;}
-
-// https://stackoverflow.com/questions/51615363/how-to-write-c-getters-and-setters
+double Square::calculatePerimeter() const {
+    return 4 * l;
+}
 
 // Helpers
-void Square::printInfos() {
-    cout << " ----------------------------------------------- " << '\n';
-    cout << "The name of my Square is: "    << (this)->getName()    << '\n';
-    cout << "The length of my object is: "  << (this)->getL()       << '\n';
+void Square::printInfos() const {
+    std::cout << "Square Name: " << name << std::endl;
+    std::cout << "Side Length: " << l << std::endl;
+    std::cout << "Area: " << calculateArea() << std::endl;
+    std::cout << "Perimeter: " << calculatePerimeter() << std::endl;
 }

@@ -1,32 +1,33 @@
 #ifndef CIRCLE_H
     #define CIRCLE_H
+
+    #include "../lib/Shape.hpp"
     #include <iostream>
-    using namespace std;
+    #include <string>
 
-    class Circle {
-        // Members
-        private: 
+    class Circle : public Shape {
+        private:
         double r = 0.0;
-        string name;
 
-        // Constructors
         public:
-        Circle(string _name);
-        Circle(string _name, double _r);
+        // Constructors
+        Circle(const std::string& _name);
+        Circle(const std::string& _name, double _r);
 
-        // Methods
         // Getters
-        const double& getR() const ;
-        const string& getName() const ;
+        const double& getR() const;
+        const std::string& getName() const;
 
         // Setters
         void setR(double _r);
-        void setName(string _name);
+        void setName(const std::string& _name);
 
-        // https://stackoverflow.com/questions/51615363/how-to-write-c-getters-and-setters
-
+        // Methods
+        double calculatePerimeter() const override;
+        double calculateArea() const override;
 
         // Helpers
-        void printInfos();
+        void printInfos() const override;
     };
+
 #endif

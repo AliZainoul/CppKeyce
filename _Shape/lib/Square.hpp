@@ -1,32 +1,32 @@
 #ifndef SQUARE_H
     #define SQUARE_H
+
     #include <iostream>
-    using namespace std;
+    #include "../lib/Shape.hpp"
 
-    class Square {
-        // Members
-        private: 
+    class Square : public Shape {
+        private:
         double l = 0.0;
-        string name;
 
-        // Constructors
         public:
-        Square(string _name);
-        Square(string _name, double _l);
+        // Constructors
+        Square(const std::string& _name);
+        Square(const std::string& _name, double _l);
 
-        // Methods
         // Getters
-        const double& getL() const ;
-        const string& getName() const ;
+        const double& getL() const;
+        const std::string& getName() const;
 
         // Setters
         void setL(double _l);
-        void setName(string _name);
+        void setName(const std::string& _name);
 
-        // https://stackoverflow.com/questions/51615363/how-to-write-c-getters-and-setters
-
-
+        // Methods
+        double calculateArea() const override;
+        double calculatePerimeter() const override;
+        
         // Helpers
-        void printInfos();
+        void printInfos() const override;
     };
+
 #endif

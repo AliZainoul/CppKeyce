@@ -1,28 +1,43 @@
 #include "../lib/Circle.hpp"
+#define _USE_MATH_DEFINES
+#include <cmath>
 
 // Constructors
-Circle::Circle(string _name) {(this)->name = _name;}
-Circle::Circle(string _name, double _r){
-    (this)->name = _name;
-    (this)->r = _r;
+Circle::Circle(const std::string& _name) : Shape(_name) {}
+
+Circle::Circle(const std::string& _name, double _r) : Shape(_name), r(_r) {}
+
+// Getters
+const double& Circle::getR() const {
+    return r;
+}
+
+const std::string& Circle::getName() const {
+    return name;
+}
+
+// Setters
+void Circle::setR(double _r) {
+    r = _r;
+}
+
+void Circle::setName(const std::string& _name) {
+    name = _name;
 }
 
 // Methods
-// Getters
-const double& Circle::getR() const  { return (this)->r;}
-const string& Circle::getName() const  { return (this)->name;}
-
-// Setters
-void Circle::setR(double _r) {(this)->r = _r;}
-void Circle::setName(string _name){(this)->name = _name;}
-
-// https://stackoverflow.com/questions/51615363/how-to-write-c-getters-and-setters
-
-
-// Helpers
-void Circle::printInfos() {
-    cout << " ----------------------------------------------- "     << '\n';
-    cout << "The name of my Circle is: "    << (this)->getName()    << '\n';
-    cout << "The radius of my Circle is: "  << (this)->getR()       << '\n';
+double Circle::calculatePerimeter() const {
+    return 2 * M_PI * r;
 }
 
+double Circle::calculateArea() const {
+    return M_PI * r * r;
+}
+
+// Helpers
+void Circle::printInfos() const {
+    std::cout << "Circle Name: " << name << std::endl;
+    std::cout << "Radius: " << r << std::endl;
+    std::cout << "Area: " << calculateArea() << std::endl;
+    std::cout << "Perimeter: " << calculatePerimeter() << std::endl;
+}

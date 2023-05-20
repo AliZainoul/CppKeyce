@@ -1,36 +1,36 @@
 #ifndef TRIANGLE_H
     #define TRIANGLE_H
-    #include <iostream>
-    using namespace std;
 
-    class Triangle {
-        // Members
+    #include <iostream>
+    #include "../lib/Shape.hpp"
+
+    class Triangle : public Shape {
         private:
         double a = 0.0, b = 0.0, c = 0.0;
-        string name;
 
-        // Constructors
         public:
-        Triangle(string _name);
-        Triangle(string _name, double _a, double _b, double _c);
+        // Constructors
+        Triangle(const std::string& _name);
+        Triangle(const std::string& _name, double _a, double _b, double _c);
 
-        // Methods
         // Getters
         const double& getA() const;
         const double& getB() const;
         const double& getC() const;
-        const string& getName() const;
+        const std::string& getName() const;
 
         // Setters
         void setA(double _a);
         void setB(double _b);
         void setC(double _c);
-        void setName(string _name);
+        void setName(const std::string& _name);
 
-        // https://stackoverflow.com/questions/51615363/how-to-write-c-getters-and-setters
-
-
+        // Methods
+        double calculateArea() const override;
+        double calculatePerimeter() const override;
+        
         // Helpers
-        void printInfos();
+        void printInfos() const override;
     };
+
 #endif
