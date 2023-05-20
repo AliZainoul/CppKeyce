@@ -1,7 +1,5 @@
 #ifndef TRIANGLE_H
     #define TRIANGLE_H
-
-    #include <iostream>
     #include "../lib/Shape.hpp"
 
     class Triangle : public Shape {

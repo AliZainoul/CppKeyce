@@ -1,10 +1,15 @@
 //    Open a command prompt, and type in:
 //          g++ -std=c++11 -o m src/*.cpp main.cpp && ./m
 
+//#include <iostream>
 #include "lib/Shape.hpp"
 #include "lib/Circle.hpp"
 #include "lib/Square.hpp"
 #include "lib/Triangle.hpp"
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 
 void printLine(){

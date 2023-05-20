@@ -1,7 +1,5 @@
 #ifndef SQUARE_H
     #define SQUARE_H
-
-    #include <iostream>
     #include "../lib/Shape.hpp"
 
     class Square : public Shape {

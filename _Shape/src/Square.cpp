@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../lib/Square.hpp"
 
 // Constructors

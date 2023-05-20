@@ -1,4 +1,5 @@
 // Shape.cpp file
+#include <iostream>
 #include "../lib/Shape.hpp"
 
 // Constructors

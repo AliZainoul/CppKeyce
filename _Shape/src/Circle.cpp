@@ -1,19 +1,15 @@
 #include "../lib/Circle.hpp"
-#define _USE_MATH_DEFINES
+//#include <iostream>
 #include <cmath>
 
 // Constructors
 Circle::Circle(const std::string& _name) : Shape(_name) {}
-
 Circle::Circle(const std::string& _name, double _r) : Shape(_name), r(_r) {}
 
+// Methods
 // Getters
 const double& Circle::getR() const {
     return r;
-}
-
-const std::string& Circle::getName() const {
-    return name;
 }
 
 // Setters
@@ -21,23 +17,21 @@ void Circle::setR(double _r) {
     r = _r;
 }
 
-void Circle::setName(const std::string& _name) {
-    name = _name;
-}
-
-// Methods
+// Calculate perimeter
 double Circle::calculatePerimeter() const {
     return 2 * M_PI * r;
 }
 
+// Calculate area
 double Circle::calculateArea() const {
     return M_PI * r * r;
 }
 
 // Helpers
 void Circle::printInfos() const {
-    std::cout << "Circle Name: " << name << std::endl;
-    std::cout << "Radius: " << r << std::endl;
+    std::cout << "-----------------------------------------------" << '\n';
+    std::cout << "The name of my Circle is: " << name << '\n';
+    std::cout << "The radius of my Circle is: " << r << '\n';
     std::cout << "Area: " << calculateArea() << std::endl;
     std::cout << "Perimeter: " << calculatePerimeter() << std::endl;
 }

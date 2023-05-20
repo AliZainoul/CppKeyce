@@ -1,4 +1,5 @@
 #include "../lib/Triangle.hpp"
+//#include <iostream>
 #include <cmath>
 
 // Constructors
